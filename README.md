@@ -13,10 +13,10 @@ My final solution is based on ensemble of LGBM and SAKT, which gives 0.786 on pr
 
 | File Name | Notes |  
 | --- | --- |  
-| riiid-eda.ipynb | Exploratory data analysis. |
-| riiid-lgbm-train.ipynb | This script is to train a single LGBM model. `CV score 0.781`. Trained on 14 million users with complete interaction history.|
-| riiid-inference-lgbm-sakt.ipynb | This script is the inference part, based on ensemble of trained LGBM and SAKT model. `Private LB  0.784, Public LB 0.786`.|
-| riiid-inference.ipynb| This script is the inference part, based on the single LGBM.  `Private LB 0.782, Public LB 0.779`.|
+| [riiid-eda.ipynb](https://github.com/budingtanke/riiid-answer-correctness-prediction/blob/master/riiid-eda.ipynb) | Exploratory data analysis. |
+| [riiid-lgbm-train.ipynb](https://github.com/budingtanke/riiid-answer-correctness-prediction/blob/master/riiid-lgbm-train.ipynb) | This script is to train a single LGBM model. `CV score 0.781`. Trained on 14 million users with complete interaction history.|
+| [riiid-inference-lgbm-sakt.ipynb](https://github.com/budingtanke/riiid-answer-correctness-prediction/blob/master/riiid-inference-lgbm-sakt.ipynb) | This script is the inference part, based on ensemble of trained LGBM and SAKT model. `Private LB  0.784, Public LB 0.786`.|
+| [riiid-inference.ipynb](https://github.com/budingtanke/riiid-answer-correctness-prediction/blob/master/riiid-inference.ipynb) | This script is the inference part, based on the single LGBM.  `Private LB 0.782, Public LB 0.779`.|
 
 ## Feature Engineering
 
@@ -60,6 +60,6 @@ Feature importance from LGBM:
 ![image](img/feature_importance.png)
 
 
-### CV Strategy
-CV method is based on tito's notebook https://www.kaggle.com/its7171/cv-strategy.  
+## CV Strategy
+CV method is based on [tito's notebook](https://www.kaggle.com/its7171/cv-strategy).  
 LGBM training uses last 50 million records from cv2_train, and filters only users with complete history (timestamp=0) to calculate features. And samples 14 million to train the model.
